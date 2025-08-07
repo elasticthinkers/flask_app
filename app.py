@@ -11,10 +11,10 @@ from io import BytesIO
 from flask import Flask, request, jsonify
 from datetime import datetime
 from psycopg2.extras import RealDictCursor
-
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 LAMBDA_SECRET_API = "https://pil9maduj9.execute-api.us-east-1.amazonaws.com/default/get_secrets"
 secrets=None
 # ------------------------ Utility Functions ------------------------
